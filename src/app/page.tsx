@@ -1,95 +1,63 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client';
+
+import {
+  List,
+  ListIcon,
+  ListItem,
+  Text,
+  VStack,
+  Link,
+  Box,
+  Icon,
+} from '@chakra-ui/react';
+import { FiActivity, FiMap } from 'react-icons/fi';
+import { TbBrandD3 } from 'react-icons/tb';
+import { BiLogoReact } from 'react-icons/bi';
+import NextLink from 'next/link';
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <>
+      <VStack gap={2} alignItems="flex-start" width="100%">
+        <Text marginBottom={2} fontSize={20} fontWeight="semibold">
+          Greetings! 👋
+        </Text>
+        <Text>
+          This is{' '}
+          <Link href="https://github.com/dauta" color="blue.200">
+            my
+          </Link>{' '}
+          attempt at creating interactive charts using{' '}
+          <Link href="https://d3js.org" color="blue.200">
+            d3{' '}
+            <Icon as={TbBrandD3} p={0} color="orange.300" marginBottom="-2px" />
+          </Link>{' '}
+          and{' '}
+          <Link href="https://react.dev" color="blue.200">
+            React <Icon as={BiLogoReact} color="blue.400" marginBottom="-3px" />
+          </Link>
+        </Text>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+        <Box as="section" marginTop={8}>
+          <Text marginBottom={4} fontSize={20} fontWeight="semibold">
+            Charts
+          </Text>
+          <List spacing={2}>
+            <ListItem>
+              <ListIcon as={FiActivity} color="green.500" />
+              <Link as={NextLink} href="/charts/sankey" color="blue.200">
+                Sankey
+              </Link>
+            </ListItem>
+            <ListItem>
+              <Text>
+                <ListIcon as={FiMap} color="green.500" /> Choropleth (in
+                progress 🛠️)
+              </Text>
+            </ListItem>
+          </List>
+        </Box>
+      </VStack>
+    </>
+  );
 }
