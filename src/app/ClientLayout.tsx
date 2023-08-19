@@ -16,7 +16,7 @@ export const ClientLayout = ({ children }: { children: React.ReactNode }) => {
       alignItems="center"
       gap={16}
     >
-      <Box width="100%">
+      <Box width="100%" paddingTop={12}>
         <Link as={NextLink} href="/">
           <Heading>
             <Icon

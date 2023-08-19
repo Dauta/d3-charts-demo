@@ -18,7 +18,7 @@ import NextLink from 'next/link';
 export default function Home() {
   return (
     <>
-      <VStack gap={2} alignItems="flex-start" width="100%">
+      <VStack gap={2} alignItems="flex-start" width="100%" paddingTop={4}>
         <Text marginBottom={2} fontSize={20} fontWeight="semibold">
           Greetings! 👋
         </Text>
@@ -36,6 +36,8 @@ export default function Home() {
           <Link href="https://react.dev" color="blue.200">
             React <Icon as={BiLogoReact} color="blue.400" marginBottom="-3px" />
           </Link>{' '}
+        </Text>
+        <Text>
           Charts are animated using{' '}
           <Link href="https://www.framer.com/motion/" color="blue.200">
             Framer Motion{' '}
