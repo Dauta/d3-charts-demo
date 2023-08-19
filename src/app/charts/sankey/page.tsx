@@ -1,18 +1,17 @@
-'use client';
+import type { Metadata } from 'next/types';
+import { Sankey } from '@/components/charts/sankey';
+import data from './data.json';
+import { ChartContainer } from '@/components/chart-container';
 
-import { Box, Heading } from '@chakra-ui/react';
-import { Sankey } from '@/components/charts/sankey/Sankey';
-import { data } from '@/components/charts/sankey/data';
+export const metadata: Metadata = {
+  title: 'Sankey - D3 Charts Demo',
+  description: 'Interactive Sankey chart using d3',
+};
 
-export default function SankeyPage() {
+export default function Page() {
   return (
-    <>
-      <Heading as="h2" size="lg" fontWeight="semibold" width="100%">
-        Sankey
-      </Heading>
-      <Box flex={1} width="100%">
-        <Sankey data={data} />
-      </Box>
-    </>
+    <ChartContainer>
+      <Sankey data={data} />
+    </ChartContainer>
   );
 }

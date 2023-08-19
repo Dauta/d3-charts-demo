@@ -18,9 +18,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Providers>
-          <ClientLayout>{children}</ClientLayout>
-        </Providers>
+        <div
+          style={{
+            height: '100svh',
+            width: '100vw',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            background:
+              'linear-gradient(to right bottom, #161a33, #181d35, #1a2036, #1c2338, #1e2639, #1f2b3d, #212f42, #223446, #213c4e, #204456, #1e4c5d, #1c5463)',
+          }}
+        >
+          <Providers>
+            <ClientLayout>{children}</ClientLayout>
+          </Providers>
+        </div>
       </body>
     </html>
   );
